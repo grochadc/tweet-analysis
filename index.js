@@ -2,13 +2,14 @@
 
 var request = require('request');
 const token = process.env.BEARER_TOKEN;
+const query = process.argv[2];
 
 const reqAPI = new Promise((resolve, reject) =>{
     request.get({
       headers: {
         'Authorization' : 'Bearer ' + token,
       },
-      url : 'https://api.twitter.com/1.1/search/tweets.json?q=%23yomero'
+      url : 'https://api.twitter.com/1.1/search/tweets.json?q=%23'+query+'&result_type=recent'
     }, (err, response, body) => {
       if (err) reject(err);
       var data = {response, body};
@@ -29,3 +30,5 @@ reqAPI.then((data) => {
     console.log('Created: ', user.created_at);
   }
 });
+
+console.log(process.argv[2]);
