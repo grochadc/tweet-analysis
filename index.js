@@ -40,8 +40,11 @@ reqAPI.then((data) => {
     }
   }
 
-  console.log(filterObj(iteratedUsers));
+  var filteredUsers = filterObj(iteratedUsers);
+  var usersFound = Boolean(Object.keys(filteredUsers).length);
+  console.log(usersFound ? filteredUsers : 'No users that match the criteria were found');
   console.log('API returned ',tweets.length, ' tweets');
+
 
 
   function filterObj(obj){
