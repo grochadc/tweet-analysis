@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
     "npm": "^5.8.0",
     "request": "^2.85.0",
     "requests": "^0.2.2",
