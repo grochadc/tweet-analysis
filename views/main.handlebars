@@ -17,7 +17,10 @@
     Buscando la palabra {{query}}. Con una cuenta de {{count}} tweets.
   </p>
   <p>
-    Aqui los usuarios encontrados: {{filteredUsers}}.
+    Aqui los usuarios encontrados:
+    {{#each filteredUsers}}
+    <li>{{@key}}</li>
+    {{/each}}
   </p>
  </body>
 
